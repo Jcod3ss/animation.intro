@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Untitled</title>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"></script>
+<script>
+  let x= 4;
+  let c = ['green', 'purple','yellow','brown'];
+ 
+  function setup(){
+   createCanvas(900,900);
+    frameRate(25);
+  }
+   
+  function draw(){
+     background(20);
+   
+   //line
+     stroke(random(200), 2, random(200));
+    fill('pink')
+    rect(x, 400, 150,10);
+    x+=3
+    if(x>width)
+    {x=4;
+    }
+   
+    fill('pink')
+    rect(x, 400, 150,10);
+    x+=3
+    if(x>width)
+      {x=2;
+      }
+     
+    //circle
+    noStroke();
+     let currentColor = c[frameCount % c.length]
+   fill(currentColor)
+  ellipse(x,630,90);//move horizontally
+    x+=2; //update x position by 2
+    if(x>width){
+      x=0; //reset the circle when it 
+    }
+    
+    textSize(32);
+    text('frame:'+ frameCount,150,160);
+    text('current FPS:'+frameRate(),120,100);
+   
+    text("current FPS:"+ frameRate(),300,200)
+      
+  }
+</script>
+  </body>
+</html>
